@@ -1,20 +1,18 @@
 import React from "react";
-import "../styles/PhotoListItem.scss";  // Styling import
+import "../styles/PhotoListItem.scss";
 
-// Refactored PhotoListItem component to use props
-const PhotoListItem = ({ username, imageSource, location, profile }) => {
+const PhotoListItem = ({ photo }) => {
+  // NEW: Destructuring the 'photo' object prop
+  const { id, location, imageSource, username, profile } = photo;
+
   return (
     <div className="photo-list-item">
-      {/* Render the photo */}
-      <img src={imageSource} alt={`${username}'s photo`} className="photo" />
-
-      {/* Render the photographer details */}
+      {/* JSX for rendering the photo and its details */}
+      <img src={imageSource} alt={`${username}'s photo`} />
       <div className="photo-details">
         <img src={profile} alt={`${username}'s profile`} className="profile-pic" />
-        <div>
-          <h3>{username}</h3>
-          <p>{location.city}, {location.country}</p>
-        </div>
+        <p><strong>{username}</strong></p>
+        <p>{location.city}, {location.country}</p>
       </div>
     </div>
   );
