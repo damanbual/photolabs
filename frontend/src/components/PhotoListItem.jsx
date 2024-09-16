@@ -2,17 +2,25 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = ({ photo }) => {
-  // NEW: Destructuring the 'photo' object prop
-  const { id, location, imageSource, username, profile } = photo;
+  const { username, imageSource, location, profile } = photo;
 
   return (
-    <div className="photo-list-item">
-      {/* JSX for rendering the photo and its details */}
-      <img src={imageSource} alt={`${username}'s photo`} />
-      <div className="photo-details">
-        <img src={profile} alt={`${username}'s profile`} className="profile-pic" />
-        <p><strong>{username}</strong></p>
-        <p>{location.city}, {location.country}</p>
+    <div className="photo-list__item">
+      <img
+        className="photo-list__image"
+        src={imageSource}
+        alt={username}
+      />
+      <div className="photo-list__user-details">
+        <img
+          className="photo-list__user-profile"
+          src={profile}
+          alt={`${username} profile`}
+        />
+        <div className="photo-list__user-info">
+          <p>{username}</p>
+          <p className="photo-list__user-location">{location.city}, {location.country}</p>
+        </div>
       </div>
     </div>
   );
