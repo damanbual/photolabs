@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoFavButton from "./PhotoFavButton"; // Import the button
 import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = ({ photo }) => {
@@ -6,15 +7,18 @@ const PhotoListItem = ({ photo }) => {
 
   return (
     <div className="photo-list__item">
+      {/* Add PhotoFavButton here, above the image */}
+      <PhotoFavButton />
+
       <img
         className="photo-list__image"
-        src={imageSource}  // Ensuring image paths are properly referenced
+        src={imageSource}
         alt={username}
       />
       <div className="photo-list__user-details">
         <img
           className="photo-list__user-profile"
-          src={profile}  // Ensuring profile image paths are properly referenced
+          src={profile}
           alt={`${username} profile`}
         />
         <div className="photo-list__user-info">

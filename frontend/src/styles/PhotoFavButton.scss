@@ -1,18 +1,21 @@
 .photo-list__fav-icon {
-  position: relative;
-  top: 8px;
-  right: -8px;
+  position: absolute; /* Absolute positioning for correct placement */
+  top: 10px; /* Adjusted to position within the top corner */
+  right: 10px; /* Adjusted for alignment */
   cursor: pointer;
-  margin-bottom: -30px;
-  border-width: 0.1px;
   background-color: #EEEEEE;
   width: 32px;
   height: 32px;
   text-align: center;
-  border-radius: 100%;
+  border-radius: 50%; /* Ensures circular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensures it's on top of the image */
 }
 
 .photo-list__fav-icon-svg {
-  padding: 7px;
-  top: 2px;
+  width: 20px;
+  height: 20px;
+  fill: #C80000; /* Sets the heart color */
 }
