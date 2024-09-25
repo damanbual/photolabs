@@ -8,13 +8,13 @@ const PhotoListItem = ({ photo }) => {
     <div className="photo-list__item">
       <img
         className="photo-list__image"
-        src={imageSource}
+        src={imageSource}  // Ensuring image paths are properly referenced
         alt={username}
       />
       <div className="photo-list__user-details">
         <img
           className="photo-list__user-profile"
-          src={profile}
+          src={profile}  // Ensuring profile image paths are properly referenced
           alt={`${username} profile`}
         />
         <div className="photo-list__user-info">

@@ -8,28 +8,23 @@
   max-width: fit-content;
 }
 
-.photo-list__image {
+.photo-list__image {  
   user-select: none;
   width: 300px;
   height: 200px;
   object-fit: cover;
-}
-
-.photo-list__image {
-  border-radius: 8px 8px 0px 0px;
-  user-select: none;
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
+  border-radius: 8px 8px 0px 0px;  /* Keeps the top corners rounded */
 }
 
 .photo-list__user-profile {
   object-fit: cover;
-  border-radius: 100%;
+  border-radius: 50%; /* Ensures circular shape */
   vertical-align: middle;
   margin-right: 8px;
   width: 40px;
   height: 40px;
+  overflow: hidden; /* Ensures no overflow issues with large images */
+  background-color: #f0f0f0; /* Placeholder color in case the image doesn't load */
 }
 
 .photo-list__user-details {
@@ -39,8 +34,11 @@
 .photo-list__user-info {
   margin-top: 5px;
   font-weight: 700;
-  font-size: 12px;
-  margin-left: 8px;
+  font-size: 13px;      /* Increased font size slightly for better readability */
+  margin-left: 10px;    /* Increased margin for spacing */
+  overflow: hidden;     /* Ensures no overflow of text */
+  text-overflow: ellipsis;  /* Adds '...' if text overflows */
+  white-space: nowrap;  /* Keeps text in a single line */
 }
 
 .photo-list__user-location {
