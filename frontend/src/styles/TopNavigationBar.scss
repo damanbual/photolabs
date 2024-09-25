@@ -4,17 +4,28 @@
   justify-content: space-between;
   padding: 8px;
   align-items: center;
-  -webkit-box-shadow: 0 4px 6px -6px #222;
-  -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
   height: 72px;
 }
 
 .top-nav-bar__logo {
-  text-decoration: overline;
+  text-decoration: overline;  /* This applies the line above the text */
   font-weight: 500;
   font-size: 24px;
+  font-family: "Helvetica, Arial, sans-serif"; /* Ensure correct font-family */
   color: #111;
   text-underline-position: auto;
   margin-left: 24px;
+}
+
+.top-nav-bar__center {
+  flex: 1; /* Ensures the center part (TopicList) takes up available space */
+  display: flex;
+  justify-content: center; /* Center topics list */
+}
+
+.top-nav-bar__heart {
+  margin-right: 24px;
+  display: flex;
+  justify-content: flex-end;
 }

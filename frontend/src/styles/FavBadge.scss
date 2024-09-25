@@ -1,24 +1,21 @@
 .fav-badge {
   position: relative;
+  margin-left: auto; /* Push it to the far right */
 }
 
 .fav-badge__count { 
-background-color: rgb(0, 0, 0);
-width: 20px;
-height: 20px;
-  border-radius: 99px;
+  background-color: rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Perfect circle */
   position: absolute;
-  top: 0%;
-  right: 0%;
-  left: 70%;
-  bottom: 60%;
-
-  span {
-    text-align: center;
-    color: white;
-    width: 100%;
-    font-weight: 500;
-    position: absolute;
-    font-size: 16px;
-  }
+  top: 0;
+  right: 0;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

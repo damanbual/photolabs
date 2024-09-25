@@ -1,13 +1,13 @@
 import React from 'react';
-import TopicList from './components/TopicList'; // Import TopicList component
+import TopNavigationBar from './components/TopNavigationBar'; // Import TopNavigationBar component
 import PhotoList from './components/PhotoList'; // Import PhotoList component
 import './App.scss';
 
 const App = () => {
   return (
     <div className="App">
-      <TopicList />  {/* Render the TopicList at the top */}
-      <PhotoList />   {/* Render the PhotoList below the TopicList */}
+      <TopNavigationBar />  {/* Render the TopNavigationBar at the top, which includes TopicList */}
+      <PhotoList />         {/* Render the PhotoList below the TopNavigationBar */}
     </div>
   );
 };
