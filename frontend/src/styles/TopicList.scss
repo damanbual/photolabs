@@ -3,5 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right: 24px;
+  margin: 16px 0; /* Adjusted margin for better spacing */
+  padding: 0;
+  list-style: none; /* Remove default list styling */
 }

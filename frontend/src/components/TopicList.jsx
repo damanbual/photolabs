@@ -1,7 +1,8 @@
-import React from "react";
-
+import React, { useState } from "react";
+import TopicListItem from "./TopicListItem"; // Import TopicListItem
 import "../styles/TopicList.scss";
 
+// Sample data for topics
 const sampleDataForTopicList = [
   {
     id: "1",
@@ -21,10 +22,23 @@ const sampleDataForTopicList = [
 ];
 
 const TopicList = () => {
+  const [selectedTopic, setSelectedTopic] = useState(sampleDataForTopicList[0]); // Default to the first topic
+
+  const handleTopicClick = (topic) => {
+    setSelectedTopic(topic); // Set the clicked topic as selected
+  };
+
   return (
-    <div className="top-nav-bar__topic-list">
-      {/* Insert React */}
-    </div>
+    <ul className="top-nav-bar__topic-list">
+      {sampleDataForTopicList.map((topic) => (
+        <TopicListItem
+          key={topic.id}
+          topic={topic}
+          isSelected={topic === selectedTopic}
+          onClick={() => handleTopicClick(topic)}
+        />
+      ))}
+    </ul>
   );
 };
 
