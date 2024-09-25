@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import FavIcon from './FavIcon'; // Using your existing FavIcon component
+import React, { useCallback, useState } from 'react';
+import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton() {
-  // State to track if the photo is liked
   const [isLiked, setIsLiked] = useState(false);
 
-  // Toggle function to switch between liked and unliked states
-  const toggleLike = () => {
-    setIsLiked(!isLiked);
-  };
+  // Update toggleLike to reference the previous state
+  const toggleLike = useCallback(() => {
+    setIsLiked(prevIsLiked => !prevIsLiked);  // Using previous state
+  }, []);
 
   return (
     <div className="photo-list__fav-icon" onClick={toggleLike}>
-      {/* Pass the "isLiked" state to the selected prop of FavIcon */}
       <FavIcon selected={isLiked} />
     </div>
   );

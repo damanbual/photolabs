@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import PhotoListItem from './PhotoListItem'; // Import the PhotoListItem component
+import '../styles/PhotoList.scss';
 
-import "../styles/PhotoList.scss";
-
+// Sample data for the photo list
 const sampleDataForPhotoList = [
   {
     id: "1",
@@ -32,15 +33,15 @@ const sampleDataForPhotoList = [
     },
     user: {
       id: "2",
-      username: "exampleuser",
-      name: "Joe Example",
-      profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
+      username: "janedoe",
+      name: "Jane Doe",
+      profile: `${process.env.PUBLIC_URL}/profile-2.jpg`,
     },
   },
   {
     id: "3",
     location: {
-      city: "Ottawa",
+      city: "Vancouver",
       country: "Canada",
     },
     urls: {
@@ -49,9 +50,9 @@ const sampleDataForPhotoList = [
     },
     user: {
       id: "3",
-      username: "exampleuser",
-      name: "Joe Example",
-      profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
+      username: "alexsmith",
+      name: "Alex Smith",
+      profile: `${process.env.PUBLIC_URL}/profile-3.jpg`,
     },
   },
 ];
@@ -59,7 +60,10 @@ const sampleDataForPhotoList = [
 const PhotoList = () => {
   return (
     <ul className="photo-list">
-      {/* Insert React */}
+      {/* Map through the sampleDataForPhotoList and pass each object to PhotoListItem */}
+      {sampleDataForPhotoList.map((photo) => (
+        <PhotoListItem key={photo.id} photo={photo} />
+      ))}
     </ul>
   );
 };
