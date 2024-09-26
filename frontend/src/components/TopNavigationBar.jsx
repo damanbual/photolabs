@@ -3,17 +3,17 @@ import TopicList from './TopicList';
 import FavBadge from './FavBadge';
 import '../styles/TopNavigationBar.scss';
 
-const TopNavigationBar = ({ topics, favPhotos }) => {
-  if (!topics || topics.length === 0) {
-    return <div>No topics available</div>; // Handle missing or empty topics
-  }
-
+const TopNavigationBar = ({ topics, favPhotos, onTopicSelect }) => {
   return (
     <div className="top-nav-bar">
+      {/* Logo */}
       <span className="top-nav-bar__logo">PhotoLabs</span>
+      {/* Topic List */}
       <div className="top-nav-bar__center">
-        <TopicList topics={topics} />
+        {/* Pass topics and onTopicSelect to TopicList */}
+        <TopicList topics={topics} onTopicSelect={onTopicSelect} />
       </div>
+      {/* Favorites Badge */}
       <FavBadge favPhotos={favPhotos} className="top-nav-bar__heart" />
     </div>
   );

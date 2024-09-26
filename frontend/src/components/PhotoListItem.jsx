@@ -1,19 +1,19 @@
 import React from 'react';
-import PhotoFavButton from './PhotoFavButton'; // Import the button
+import PhotoFavButton from './PhotoFavButton'; // Import PhotoFavButton
 import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = ({ photo, isFav, toggleFavorite }) => {
-  const { user, urls, location } = photo; // Destructure user, urls, and location
+  const { user, urls, location } = photo;
 
   return (
     <div className="photo-list__item">
-      {/* Add PhotoFavButton here, passing down the favorite state and toggle function */}
+      {/* Pass isFav and toggleFavorite to PhotoFavButton */}
       <PhotoFavButton isFav={isFav} onClick={() => toggleFavorite(photo.id)} />
 
       <img
         className="photo-list__image"
         src={urls.regular}
-        alt={`${user.name}'s photo`} // Use user's name for the alt text
+        alt={`${user.name}'s photo`}
       />
       <div className="photo-list__user-details">
         <img

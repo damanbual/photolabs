@@ -1,12 +1,13 @@
 const photo1 = {
   "id": "1",
+  "topic": "Nature", // Added topic field
   "location": {
     "city": "Montreal",
     "country": "Canada"
   },
   "urls": {
-    "full": `${process.env.PUBLIC_URL}/Image-1-Full.jpeg`, 
-    "regular": `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg` 
+    "full": `${process.env.PUBLIC_URL}/Image-1-Full.jpeg`,
+    "regular": `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`
   },
   "user": {
     "id": "1",
@@ -18,12 +19,13 @@ const photo1 = {
 
 const photo2 = {
   "id": "2",
+  "topic": "Travel", // Added topic field
   "location": {
     "city": "Toronto",
     "country": "Canada"
   },
   "urls": {
-    "full": `${process.env.PUBLIC_URL}/Image-2-Full.jpeg`, 
+    "full": `${process.env.PUBLIC_URL}/Image-2-Full.jpeg`,
     "regular": `${process.env.PUBLIC_URL}/Image-2-Regular.jpeg`
   },
   "user": {
@@ -36,6 +38,7 @@ const photo2 = {
 
 const photo3 = {
   "id": "3",
+  "topic": "People", // Added topic field
   "location": {
     "city": "Ottawa",
     "country": "Canada"
@@ -54,6 +57,7 @@ const photo3 = {
 
 const photo4 = {
   "id": "4",
+  "topic": "Fashion", // Added topic field
   "location": {
     "city": "Quebec",
     "country": "Canada"
@@ -72,6 +76,7 @@ const photo4 = {
 
 const photo5 = {
   "id": "5",
+  "topic": "Animals", // Added topic field
   "location": {
     "city": "Vancouver",
     "country": "Canada"
@@ -90,6 +95,7 @@ const photo5 = {
 
 const photo6 = {
   "id": "6",
+  "topic": "Nature", // Added topic field
   "location": {
     "city": "Montreal",
     "country": "Canada"
@@ -108,6 +114,7 @@ const photo6 = {
 
 const photo7 = {
   "id": "7",
+  "topic": "Travel", // Added topic field
   "location": {
     "city": "Calgary",
     "country": "Canada"
@@ -126,6 +133,7 @@ const photo7 = {
 
 const photo8 = {
   "id": "8",
+  "topic": "People", // Added topic field
   "location": {
     "city": "Ottawa",
     "country": "Canada"
@@ -144,6 +152,7 @@ const photo8 = {
 
 const photo9 = {
   "id": "9",
+  "topic": "Fashion", // Added topic field
   "location": {
     "city": "Nova Scotia",
     "country": "Canada"
@@ -162,6 +171,7 @@ const photo9 = {
 
 const photo10 = {
   "id": "10",
+  "topic": "Animals", // Added topic field
   "location": {
     "city": "Edmonton",
     "country": "Canada"
@@ -185,7 +195,7 @@ const photos = [
       photo2,
       photo3,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -194,7 +204,7 @@ const photos = [
       photo1,
       photo3,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -203,7 +213,7 @@ const photos = [
       photo1,
       photo2,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -212,7 +222,7 @@ const photos = [
       photo1,
       photo2,
       photo3,
-      photo5,
+      photo5
     }
   },
   {
@@ -221,7 +231,7 @@ const photos = [
       photo1,
       photo2,
       photo3,
-      photo4,
+      photo4
     }
   },
   {
@@ -230,7 +240,7 @@ const photos = [
       photo2,
       photo3,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -239,7 +249,7 @@ const photos = [
       photo1,
       photo2,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -248,7 +258,7 @@ const photos = [
       photo1,
       photo2,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -257,7 +267,7 @@ const photos = [
       photo1,
       photo2,
       photo4,
-      photo5,
+      photo5
     }
   },
   {
@@ -266,7 +276,7 @@ const photos = [
       photo1,
       photo2,
       photo4,
-      photo5,
+      photo5
     }
   }
 ];

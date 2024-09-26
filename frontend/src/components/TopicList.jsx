@@ -7,7 +7,7 @@ const TopicList = ({ topics, onTopicSelect }) => {
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
-    onTopicSelect(topic.title); // Notify parent of topic selection
+    onTopicSelect && onTopicSelect(topic.title); // Safely call onTopicSelect
   };
 
   return (
