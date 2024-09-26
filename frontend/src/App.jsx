@@ -1,13 +1,11 @@
 import React from 'react';
-import TopNavigationBar from './components/TopNavigationBar'; // Import TopNavigationBar component
-import PhotoList from './components/PhotoList'; // Import PhotoList component
+import HomeRoute from './components/HomeRoute'; // Import HomeRoute component
 import './App.scss';
 
 const App = () => {
   return (
     <div className="App">
-      <TopNavigationBar />  {/* Render the TopNavigationBar at the top, which includes TopicList */}
-      <PhotoList />         {/* Render the PhotoList below the TopNavigationBar */}
+      <HomeRoute />  {/* Render the HomeRoute component */}
     </div>
   );
 };
