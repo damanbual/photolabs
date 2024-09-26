@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import TopicListItem from "./TopicListItem";
 import "../styles/TopicList.scss";
 
-const TopicList = ({ topics }) => {
-  // Make sure to handle cases where topics might be undefined or empty
-  if (!topics || topics.length === 0) {
-    return <p>No topics available</p>;
-  }
-
-  const [selectedTopic, setSelectedTopic] = useState(topics[0]);
+const TopicList = ({ topics, onTopicSelect }) => {
+  const [selectedTopic, setSelectedTopic] = useState(null);
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
+    onTopicSelect(topic.title); // Notify parent of topic selection
   };
 
   return (
@@ -20,7 +16,7 @@ const TopicList = ({ topics }) => {
         <TopicListItem
           key={topic.id}
           topic={topic}
-          isSelected={topic === selectedTopic}
+          isSelected={topic.title === selectedTopic?.title}
           onClick={() => handleTopicClick(topic)}
         />
       ))}

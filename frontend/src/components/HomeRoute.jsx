@@ -1,20 +1,13 @@
 import React from 'react';
-import TopNavigationBar from './TopNavigationBar'; // Import TopNavigationBar
-import PhotoList from './PhotoList'; // Import PhotoList
-import '../styles/HomeRoute.scss'; // Keep this import as it is
+import TopNavigationBar from './TopNavigationBar';
+import PhotoList from './PhotoList';
+import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ topics, photos, favPhotos, toggleFavorite }) => {
+const HomeRoute = ({ topics, photos, favPhotos, toggleFavorite, onTopicSelect }) => {
   return (
     <div className="home-route">
-      {/* Pass the topics down to TopNavigationBar */}
-      <TopNavigationBar topics={topics} />  {/* Ensure topics prop passed */}
-      
-      {/* Render the PhotoList and pass the necessary props */}
-      <PhotoList
-        photos={photos}
-        favPhotos={favPhotos} // Pass favorite state
-        toggleFavorite={toggleFavorite} // Pass the toggle function
-      />
+      <TopNavigationBar topics={topics} onTopicSelect={onTopicSelect} />
+      <PhotoList photos={photos} favPhotos={favPhotos} toggleFavorite={toggleFavorite} />
     </div>
   );
 };

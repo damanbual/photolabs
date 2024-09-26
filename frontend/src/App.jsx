@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import HomeRoute from './components/HomeRoute'; // HomeRoute component
-import topics from './mocks/topics'; // Import mock data for topics
-import photos from './mocks/photos'; // Import mock data for photos
+import HomeRoute from './components/HomeRoute'; 
+import topics from './mocks/topics'; // Ensure this file exists and is correctly imported
+import photos from './mocks/photos'; 
 import './App.scss';
 
 const App = () => {
-  const [favPhotos, setFavPhotos] = useState([]); // Track favorited photos
+  const [favPhotos, setFavPhotos] = useState([]); // Initialize as an empty array
 
-  // Function to toggle favorite photos
   const toggleFavorite = (photoId) => {
     setFavPhotos((prevFavPhotos) => {
       if (prevFavPhotos.includes(photoId)) {
-        // If the photo is already favorited, remove it
         return prevFavPhotos.filter((id) => id !== photoId);
       } else {
-        // Otherwise, add it to the favorites
         return [...prevFavPhotos, photoId];
       }
     });
@@ -22,12 +19,11 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* Pass the mock data and favorite state as props to HomeRoute */}
       <HomeRoute
-        topics={topics}    // <-- Make sure we are passing topics here
+        topics={topics}
         photos={photos}
-        favPhotos={favPhotos} // Pass down the favorite photos
-        toggleFavorite={toggleFavorite} // Pass down the toggle function
+        favPhotos={favPhotos}
+        toggleFavorite={toggleFavorite}
       />
     </div>
   );

@@ -2,15 +2,11 @@ import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/FavBadge.scss';
 
-const FavBadge = ({ isFavPhotoExist }) => {
+const FavBadge = ({ favCount, onClick }) => {
   return (
-    <div className='fav-badge'>
-      <FavIcon />
-      {isFavPhotoExist && (
-        <div className="fav-badge__count">
-          <span>1</span> {/* You can update this to show the number of favorite photos */}
-        </div>
-      )}
+    <div className="fav-badge" onClick={onClick} style={{ cursor: 'pointer' }}>
+      <FavIcon selected={favCount > 0} />
+      {favCount > 0 && <span className="fav-badge__count">{favCount}</span>}
     </div>
   );
 };
