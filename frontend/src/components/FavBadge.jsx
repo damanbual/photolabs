@@ -2,10 +2,15 @@ import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/FavBadge.scss';
 
-const FavBadge = ({ isFavPhotoExist, className }) => {
+const FavBadge = ({ isFavPhotoExist }) => {
   return (
-    <div className={`fav-badge ${className}`}> {/* Applied the className prop here */}
-      <FavIcon displayAlert={!!isFavPhotoExist} />
+    <div className='fav-badge'>
+      <FavIcon />
+      {isFavPhotoExist && (
+        <div className="fav-badge__count">
+          <span>1</span> {/* You can update this to show the number of favorite photos */}
+        </div>
+      )}
     </div>
   );
 };

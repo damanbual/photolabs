@@ -1,18 +1,11 @@
-import React, { useCallback, useState } from 'react';
-import FavIcon from './FavIcon';
+import React from 'react';
+import FavIcon from './FavIcon'; // Import the favorite icon
 import '../styles/PhotoFavButton.scss';
 
-function PhotoFavButton() {
-  const [isLiked, setIsLiked] = useState(false);
-
-  // Update toggleLike to reference the previous state
-  const toggleLike = useCallback(() => {
-    setIsLiked(prevIsLiked => !prevIsLiked);  // Using previous state
-  }, []);
-
+function PhotoFavButton({ isFav, onClick }) {
   return (
-    <div className="photo-list__fav-icon" onClick={toggleLike}>
-      <FavIcon selected={isLiked} />
+    <div className="photo-list__fav-icon" onClick={onClick}>
+      <FavIcon selected={isFav} /> {/* Update icon based on isFav */}
     </div>
   );
 }
