@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import TopicListItem from "./TopicListItem"; // Import TopicListItem
-import topics from '../mocks/topics'; // Import topics mock data
+import TopicListItem from "./TopicListItem";
 import "../styles/TopicList.scss";
 
-const TopicList = () => {
-  const [selectedTopic, setSelectedTopic] = useState(topics[0]); // Default to the first topic
+const TopicList = ({ topics }) => {
+  const [selectedTopic, setSelectedTopic] = useState(topics[0]);
 
   const handleTopicClick = (topic) => {
-    setSelectedTopic(topic); // Set the clicked topic as selected
+    setSelectedTopic(topic);
   };
 
   return (

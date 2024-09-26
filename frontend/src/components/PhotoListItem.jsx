@@ -1,24 +1,22 @@
 import React from "react";
-import PhotoFavButton from "./PhotoFavButton"; // Import the button
+import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoListItem.scss";
 
-const PhotoListItem = ({ photo }) => {
-  const { user, urls, location } = photo; // Destructure user, urls, and location
+const PhotoListItem = ({ photo, onClick }) => {
+  const { user, urls, location } = photo;
 
   return (
-    <div className="photo-list__item">
-      {/* Add PhotoFavButton here, above the image */}
+    <div className="photo-list__item" onClick={onClick}>
       <PhotoFavButton />
-
       <img
         className="photo-list__image"
-        src={urls.regular} // Fix the image source to point to photo.urls.regular
-        alt={`${user.name}'s photo`} // Use user's name for the alt text
+        src={urls.regular}
+        alt={`${user.name}'s photo`}
       />
       <div className="photo-list__user-details">
         <img
           className="photo-list__user-profile"
-          src={user.profile} // Fix the profile image to point to user.profile
+          src={user.profile}
           alt={`${user.name}'s profile`}
         />
         <div className="photo-list__user-info">

@@ -5,16 +5,16 @@ const photo1 = {
     "country": "Canada"
   },
   "urls": {
-    "full": `${process.env.PUBLIC_URL}/Image-1-Full.jpeg`,
-    "regular": `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`
+    "full": `${process.env.PUBLIC_URL}/Image-1-Full.jpeg`, 
+    "regular": `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg` 
   },
   "user": {
     "id": "1",
-    "username": "exampleuser",
+    "username": "joeexample",
     "name": "Joe Example",
     "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
   }
-}
+};
 
 const photo2 = {
   "id": "2",
@@ -23,16 +23,16 @@ const photo2 = {
     "country": "Canada"
   },
   "urls": {
-    "full": `${process.env.PUBLIC_URL}/Image-2-Full.jpeg`,
+    "full": `${process.env.PUBLIC_URL}/Image-2-Full.jpeg`, 
     "regular": `${process.env.PUBLIC_URL}/Image-2-Regular.jpeg`
   },
   "user": {
     "id": "2",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "janedoe",
+    "name": "Jane Doe",
+    "profile": `${process.env.PUBLIC_URL}/profile-2.jpg`
   }
-}
+};
 
 const photo3 = {
   "id": "3",
@@ -46,11 +46,11 @@ const photo3 = {
   },
   "user": {
     "id": "3",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "alexsmith",
+    "name": "Alex Smith",
+    "profile": `${process.env.PUBLIC_URL}/profile-3.jpg`
   }
-}
+};
 
 const photo4 = {
   "id": "4",
@@ -64,12 +64,11 @@ const photo4 = {
   },
   "user": {
     "id": "4",
-    "updated_at": "2016-07-10T11:00:01-05:00",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "sarahtaylor",
+    "name": "Sarah Taylor",
+    "profile": `${process.env.PUBLIC_URL}/profile-4.jpg`
   }
-}
+};
 
 const photo5 = {
   "id": "5",
@@ -83,13 +82,13 @@ const photo5 = {
   },
   "user": {
     "id": "5",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "michaeljohnson",
+    "name": "Michael Johnson",
+    "profile": `${process.env.PUBLIC_URL}/profile-5.jpg`
   }
-}
+};
 
-const photo6 =  {
+const photo6 = {
   "id": "6",
   "location": {
     "city": "Montreal",
@@ -101,11 +100,11 @@ const photo6 =  {
   },
   "user": {
     "id": "6",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "annalee",
+    "name": "Anna Lee",
+    "profile": `${process.env.PUBLIC_URL}/profile-6.jpg`
   }
-}
+};
 
 const photo7 = {
   "id": "7",
@@ -119,11 +118,11 @@ const photo7 = {
   },
   "user": {
     "id": "7",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "tombrown",
+    "name": "Tom Brown",
+    "profile": `${process.env.PUBLIC_URL}/profile-7.jpg`
   }
-}
+};
 
 const photo8 = {
   "id": "8",
@@ -137,11 +136,11 @@ const photo8 = {
   },
   "user": {
     "id": "8",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "karensmith",
+    "name": "Karen Smith",
+    "profile": `${process.env.PUBLIC_URL}/profile-8.jpg`
   }
-}
+};
 
 const photo9 = {
   "id": "9",
@@ -155,11 +154,11 @@ const photo9 = {
   },
   "user": {
     "id": "9",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "davidhall",
+    "name": "David Hall",
+    "profile": `${process.env.PUBLIC_URL}/profile-9.jpg`
   }
-}
+};
 
 const photo10 = {
   "id": "10",
@@ -173,14 +172,11 @@ const photo10 = {
   },
   "user": {
     "id": "10",
-    "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "username": "oliviadavis",
+    "name": "Olivia Davis",
+    "profile": `${process.env.PUBLIC_URL}/profile-10.jpg`
   }
-}
-
-
-
+};
 
 const photos = [
   {
@@ -195,7 +191,7 @@ const photos = [
   {
     ...photo2,
     similar_photos: {
-      photo2,
+      photo1,
       photo3,
       photo4,
       photo5,
@@ -204,8 +200,8 @@ const photos = [
   {
     ...photo3,
     similar_photos: {
+      photo1,
       photo2,
-      photo3,
       photo4,
       photo5,
     }
@@ -213,19 +209,19 @@ const photos = [
   {
     ...photo4,
     similar_photos: {
+      photo1,
       photo2,
       photo3,
-      photo4,
       photo5,
     }
   },
   {
     ...photo5,
     similar_photos: {
+      photo1,
       photo2,
       photo3,
       photo4,
-      photo5,
     }
   },
   {
@@ -240,8 +236,8 @@ const photos = [
   {
     ...photo7,
     similar_photos: {
+      photo1,
       photo2,
-      photo3,
       photo4,
       photo5,
     }
@@ -249,8 +245,8 @@ const photos = [
   {
     ...photo8,
     similar_photos: {
+      photo1,
       photo2,
-      photo3,
       photo4,
       photo5,
     }
@@ -258,8 +254,8 @@ const photos = [
   {
     ...photo9,
     similar_photos: {
+      photo1,
       photo2,
-      photo3,
       photo4,
       photo5,
     }
@@ -267,12 +263,12 @@ const photos = [
   {
     ...photo10,
     similar_photos: {
+      photo1,
       photo2,
-      photo3,
       photo4,
       photo5,
     }
   }
-]
+];
 
 export default photos;
