@@ -37,11 +37,19 @@ const PhotoDetailsModal = ({ photo, onClose }) => {
         </div>
       </div>
 
-      {/* Similar Photos Placeholder */}
+      {/* Similar Photos */}
       <div className="photo-details-modal__similar-photos">
         <h3>Similar Photos</h3>
         <div className="photo-details-modal__similar-photos-grid">
-          {/* Render similar photos here in future steps */}
+          {Object.values(photo.similar_photos).map((similarPhoto) => (
+            <div key={similarPhoto.id} className="photo-details-modal__similar-photo-item">
+              <img
+                src={similarPhoto.urls.regular}
+                alt={`${similarPhoto.user.name}'s similar photo`}
+                className="photo-details-modal__similar-photo-image"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
