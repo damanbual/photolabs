@@ -2,10 +2,10 @@ import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/FavBadge.scss';
 
-const FavBadge = ({ favCount, onClick }) => {
+const FavBadge = ({ favCount }) => {
   return (
-    <div className="fav-badge" onClick={onClick} style={{ cursor: 'pointer' }}>
-      <FavIcon selected={favCount > 0} />
+    <div className="fav-badge" style={{ cursor: 'pointer' }}>
+      <FavIcon selected={favCount > 0} /> {/* Icon changes based on favCount */}
       {favCount > 0 && <span className="fav-badge__count">{favCount}</span>}
     </div>
   );

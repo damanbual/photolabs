@@ -3,7 +3,7 @@ import TopicList from './TopicList';
 import FavBadge from './FavBadge';
 import '../styles/TopNavigationBar.scss';
 
-const TopNavigationBar = ({ topics, favPhotos, favCount, onTopicSelect, showAllPhotos, toggleShowFavorites }) => {
+const TopNavigationBar = ({ topics, favCount, onTopicSelect, showAllPhotos, toggleShowFavorites }) => {
   return (
     <div className="top-nav-bar">
       {/* Logo with showAllPhotos function */}

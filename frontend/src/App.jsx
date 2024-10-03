@@ -58,6 +58,7 @@ const App = () => {
         topics={topics}
         photos={filterPhotos(photos, selectedTopic)}
         favPhotos={favPhotos}
+        favCount={favPhotos.length} // Pass the number of favorite photos to TopNavigationBar
         toggleFavorite={toggleFavorite}
         onTopicSelect={setSelectedTopic}
         showAllPhotos={showAllPhotos}  // Pass down the function to reset to all photos
