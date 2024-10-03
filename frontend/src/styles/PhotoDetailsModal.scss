@@ -2,23 +2,37 @@
   background-color: white;
   box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
   position: absolute;
-  z-index: 1000;  /* Ensures modal stays on top */
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -40%);
+  z-index: 1000;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
   height: 80%;
   width: 55%;
-  overflow-y: scroll;
-  border-radius: 12px;
+  overflow-y: auto; /* Allows vertical scrolling only */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  border-radius: 14px;
 }
 
 .photo-details-modal__close-button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border: none;
   text-align: center;
   cursor: pointer;
-  margin-left: 16px;
-  margin-top: 16px;
+  position: absolute;
+  top: 16px;
+  left: 16px;  /* Move it to the left corner */
+  z-index: 11;  /* Ensure it is above other content */
+}
+
+.photo-details-modal__fav-icon {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 11; 
 }
 
 .photo-details-modal__content {
@@ -26,22 +40,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.photo-details-modal__fav-icon {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+  padding: 0 16px;  /* Add padding to prevent content from touching the edges */
 }
 
 .photo-details-modal__image {
-  max-width: 95%;
+  max-width: 100%; /* Ensures the image fits within the modal width */
+  max-height: 60vh; /* Ensures the image doesn't overflow vertically */
   border-radius: 8px;
+  margin-top: 42px;
   margin-bottom: 16px;
 }
 
 .photo-details-modal__info {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 8px;
 }
 
@@ -61,12 +74,14 @@
 
 .photo-details-modal__similar-photos {
   margin-top: 24px;
+  width: auto;
 }
 
 .photo-details-modal__similar-photos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 0 16px; 
 }
 
 .photo-details-modal__similar-photo-image {
