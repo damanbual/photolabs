@@ -23,13 +23,18 @@ const HomeRoute = ({
         showAllPhotos={showAllPhotos} // Function to reset to all photos
         toggleShowFavorites={toggleShowFavorites} // Function to toggle favorite photos
       />
-      {/* Pass photos, favPhotos, toggleFavorite, and onPhotoClick to PhotoList */}
-      <PhotoList
-        photos={photos}
-        favPhotos={favPhotos}
-        toggleFavorite={toggleFavorite}
-        onPhotoClick={onPhotoClick} // Function to handle clicking on a photo
-      />
+      {/* Display a message if no photos match */}
+      {photos.length === 0 ? (
+        <div className="no-photos-message">No photos available for the selected topic.</div>
+      ) : (
+        // Pass photos, favPhotos, toggleFavorite, and onPhotoClick to PhotoList
+        <PhotoList
+          photos={photos}
+          favPhotos={favPhotos}
+          toggleFavorite={toggleFavorite}
+          onPhotoClick={onPhotoClick} // Function to handle clicking on a photo
+        />
+      )}
     </div>
   );
 };

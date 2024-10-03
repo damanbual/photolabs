@@ -25,7 +25,6 @@ const App = () => {
   // Function to filter photos by selected topic or favorites
   const filterPhotos = (photos, topicTitle) => {
     if (showFavorites) {
-      console.log('Showing only favorite photos');
       return photos.filter((photo) => favPhotos.includes(photo.id));
     }
     if (!topicTitle) return photos; // If no topic selected, return all photos
@@ -34,14 +33,12 @@ const App = () => {
 
   // Function to show all photos when "PhotoLabs" logo is clicked
   const showAllPhotos = () => {
-    console.log("Showing all photos");
     setSelectedTopic(null);  // Reset the selected topic
     setShowFavorites(false);  // Reset the favorites view
   };
 
   // Function to toggle showing only favorite photos
   const toggleShowFavorites = () => {
-    console.log("Toggling show favorites");
     setShowFavorites((prevShowFavorites) => !prevShowFavorites);  // Toggle the favorites view
   };
 

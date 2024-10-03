@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoFavButton from './PhotoFavButton'; // Import PhotoFavButton
+import PhotoFavButton from './PhotoFavButton';
 import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = ({ photo, isFav, toggleFavorite, onPhotoClick }) => {
@@ -7,14 +7,23 @@ const PhotoListItem = ({ photo, isFav, toggleFavorite, onPhotoClick }) => {
 
   return (
     <div className="photo-list__item" onClick={() => onPhotoClick(photo)}>
-      {/* Pass isFav and toggleFavorite to PhotoFavButton */}
-      <PhotoFavButton isFav={isFav} onClick={(e) => { e.stopPropagation(); toggleFavorite(photo.id); }} />
+      {/* Favorite button */}
+      <PhotoFavButton
+        isFav={isFav}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent triggering photo click when favoriting
+          toggleFavorite(photo.id);
+        }}
+      />
 
+      {/* Photo thumbnail */}
       <img
         className="photo-list__image"
         src={urls.regular}
         alt={`${user.name}'s photo`}
       />
+
+      {/* User details below the image */}
       <div className="photo-list__user-details">
         <img
           className="photo-list__user-profile"
