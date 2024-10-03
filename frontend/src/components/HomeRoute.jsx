@@ -11,7 +11,7 @@ const HomeRoute = ({
   onTopicSelect,
   showAllPhotos,
   toggleShowFavorites,
-  onPhotoClick, // Add onPhotoClick as a prop
+  onPhotoClick
 }) => {
   return (
     <div className="home-route">
@@ -20,15 +20,15 @@ const HomeRoute = ({
         topics={topics}
         favPhotos={favPhotos}
         onTopicSelect={onTopicSelect}
-        showAllPhotos={showAllPhotos}
-        toggleShowFavorites={toggleShowFavorites}
+        showAllPhotos={showAllPhotos} // Function to reset to all photos
+        toggleShowFavorites={toggleShowFavorites} // Function to toggle favorite photos
       />
       {/* Pass photos, favPhotos, toggleFavorite, and onPhotoClick to PhotoList */}
       <PhotoList
         photos={photos}
         favPhotos={favPhotos}
         toggleFavorite={toggleFavorite}
-        onPhotoClick={onPhotoClick}  // Pass down the onPhotoClick prop
+        onPhotoClick={onPhotoClick} // Function to handle clicking on a photo
       />
     </div>
   );
