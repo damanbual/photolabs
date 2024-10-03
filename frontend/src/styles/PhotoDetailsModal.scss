@@ -1,7 +1,8 @@
 .photo-details-modal {
   background-color: white;
-  box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
   position: absolute;
+  z-index: 1000;  /* Ensures modal stays on top */
   top: 55%;
   left: 50%;
   transform: translate(-50%, -40%);
@@ -14,64 +15,61 @@
 .photo-details-modal__close-button {
   background-color: white;
   border: none;
-  color: white;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
   cursor: pointer;
   margin-left: 16px;
   margin-top: 16px;
 }
 
-.photo-details-modal__images {
-  margin-left: 36px;
-  margin-top: 8px;
+.photo-details-modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-details-modal__fav-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .photo-details-modal__image {
   max-width: 95%;
   border-radius: 8px;
+  margin-bottom: 16px;
 }
 
-.photo-details-modal__top-bar {
+.photo-details-modal__info {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 16px;
   margin-top: 8px;
-  align-items: center;
 }
 
-.photo-details-modal__photographer-details {
+.photo-details-modal__user {
   display: flex;
-  font-size: 16px;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.photo-details-modal__header {
-  font-size: 18px;
-  font-weight: 500;
-  color: #1e1e1e;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  width: 90%;
-}
-
-.photo-details-modal__photographer-location {
-  color: #838383;
-}
-.photo-details-modal__photographer-profile {
+.photo-details-modal__user-profile {
   object-fit: cover;
-  border-radius: 100%;
-  vertical-align: middle;
-  margin-right: 8px;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
+  margin-right: 12px;
 }
 
-.photo-details-modal__photographer-info {
-  margin-top: 5px;
-  font-weight: 700;
-  font-size: 12px;
-  margin-left: 8px;
+.photo-details-modal__similar-photos {
+  margin-top: 24px;
+}
+
+.photo-details-modal__similar-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.photo-details-modal__similar-photo-image {
+  width: 100%;
+  border-radius: 8px;
 }

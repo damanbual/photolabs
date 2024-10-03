@@ -65,11 +65,13 @@ const App = () => {
         onPhotoClick={handlePhotoClick}  // Pass down the function to open the modal
       />
       {modalPhoto && (
-        <PhotoDetailsModal
-          photo={modalPhoto}
-          onClose={closeModal} // Pass down the function to close the modal
-        />
-      )}
+       <PhotoDetailsModal
+       photo={modalPhoto}
+       onClose={closeModal} // Pass down the function to close the modal
+       isFav={favPhotos.includes(modalPhoto.id)}  // Pass down if the photo is favorited
+       toggleFavorite={toggleFavorite}  // Pass down the function to toggle favorites
+    />
+    )}
     </div>
   );
 };

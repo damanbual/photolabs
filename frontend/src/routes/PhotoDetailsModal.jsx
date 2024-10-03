@@ -1,8 +1,9 @@
 import React from 'react';
+import PhotoFavButton from '../components/PhotoFavButton'; // Import PhotoFavButton for favoriting
 import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 
-const PhotoDetailsModal = ({ photo, onClose }) => {
+const PhotoDetailsModal = ({ photo, onClose, isFav, toggleFavorite }) => {
   return (
     <div className="photo-details-modal">
       {/* Close button */}
@@ -18,6 +19,11 @@ const PhotoDetailsModal = ({ photo, onClose }) => {
           src={photo.urls.full}
           alt={`${photo.user.name}'s photo`}
         />
+
+        {/* Favorite button */}
+        <div className="photo-details-modal__fav-icon">
+          <PhotoFavButton isFav={isFav} onClick={() => toggleFavorite(photo.id)} />
+        </div>
       </div>
 
       {/* Photo details */}
