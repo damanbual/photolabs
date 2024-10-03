@@ -7,7 +7,9 @@ const TopicList = ({ topics, onTopicSelect }) => {
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
-    onTopicSelect && onTopicSelect(topic.title); // Safely call onTopicSelect
+    if (onTopicSelect) {
+      onTopicSelect(topic.title);  // Ensure we're passing the topic title to the parent component
+    }
   };
 
   return (

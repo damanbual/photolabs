@@ -2,29 +2,28 @@ import React from 'react';
 import HomeRoute from './components/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import useApplicationData from './hooks/useApplicationData';
+import './App.scss';
 
 const App = () => {
-  // Destructure the values from useApplicationData hook
   const {
     state,
     onPhotoSelect,
     updateToFavPhotoIds,
     onLoadTopic,
-    onClosePhotoDetailsModal,
-    setShowFavorites,
-    setSelectedTopic
+    onClosePhotoDetailsModal
   } = useApplicationData();
 
   return (
     <div className="App">
       <HomeRoute
         topics={state.topics}
-        photos={onLoadTopic()}
+        photos={state.photos}
         favPhotos={state.favPhotos}
+        favCount={state.favPhotos.length}
         toggleFavorite={updateToFavPhotoIds}
-        onTopicSelect={setSelectedTopic}
-        showAllPhotos={() => setSelectedTopic(null)}
-        toggleShowFavorites={() => setShowFavorites(!state.showFavorites)}
+        onTopicSelect={onLoadTopic}
+        showAllPhotos={() => onLoadTopic(null)}
+        toggleShowFavorites={() => {}}
         onPhotoClick={onPhotoSelect}
       />
       {state.modalPhoto && (

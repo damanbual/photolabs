@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoListItem from './PhotoListItem'; // Import PhotoListItem
+import PhotoListItem from './PhotoListItem';
 import '../styles/PhotoList.scss';
 
 const PhotoList = ({ photos, favPhotos, toggleFavorite, onPhotoClick }) => {
@@ -9,9 +9,9 @@ const PhotoList = ({ photos, favPhotos, toggleFavorite, onPhotoClick }) => {
         <PhotoListItem
           key={photo.id}
           photo={photo}
-          isFav={favPhotos.includes(photo.id)}  // Determine if the photo is favorited
-          toggleFavorite={toggleFavorite}       // Pass the toggleFavorite function
-          onPhotoClick={onPhotoClick}           // Pass the click handler
+          isFav={favPhotos.includes(photo.id)}
+          toggleFavorite={toggleFavorite}
+          onPhotoClick={onPhotoClick}
         />
       ))}
     </ul>
