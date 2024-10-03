@@ -3,18 +3,14 @@ import TopicList from './TopicList';
 import FavBadge from './FavBadge';
 import '../styles/TopNavigationBar.scss';
 
-const TopNavigationBar = ({ topics, favPhotos, onTopicSelect, showAllPhotos, toggleShowFavorites }) => {
+const TopNavigationBar = ({ topics, favPhotos, favCount, onTopicSelect, showAllPhotos, toggleShowFavorites }) => {
   return (
     <div className="top-nav-bar">
-      {/* Logo */}
+      {/* Logo with showAllPhotos function */}
       <div 
         className="top-nav-bar__logo" 
-        onClick={() => {
-          console.log('PhotoLabs logo clicked');  // Log the click
-          showAllPhotos();  // Invoke showAllPhotos to reset state
-        }} 
-        style={{ cursor: 'pointer' }}
-      >
+        onClick={showAllPhotos} 
+        style={{ cursor: 'pointer' }}>
         PhotoLabs
       </div>
 
@@ -26,14 +22,9 @@ const TopNavigationBar = ({ topics, favPhotos, onTopicSelect, showAllPhotos, tog
       {/* Favorites Badge */}
       <div 
         className="top-nav-bar__heart" 
-        onClick={() => {
-          console.log('Favorites heart clicked');  // Log the click
-          toggleShowFavorites();  // Toggle to show only favorite photos
-        }} 
-        style={{ cursor: 'pointer' }}
-      >
-        {/* Pass down the number of favorite photos as favCount */}
-        <FavBadge favCount={favPhotos.length} />
+        onClick={toggleShowFavorites} 
+        style={{ cursor: 'pointer' }}>
+        <FavBadge favCount={favCount} />
       </div>
     </div>
   );
