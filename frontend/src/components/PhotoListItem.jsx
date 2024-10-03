@@ -2,13 +2,13 @@ import React from 'react';
 import PhotoFavButton from './PhotoFavButton'; // Import PhotoFavButton
 import '../styles/PhotoListItem.scss';
 
-const PhotoListItem = ({ photo, isFav, toggleFavorite }) => {
+const PhotoListItem = ({ photo, isFav, toggleFavorite, onPhotoClick }) => {
   const { user, urls, location } = photo;
 
   return (
-    <div className="photo-list__item">
+    <div className="photo-list__item" onClick={() => onPhotoClick(photo)}>
       {/* Pass isFav and toggleFavorite to PhotoFavButton */}
-      <PhotoFavButton isFav={isFav} onClick={() => toggleFavorite(photo.id)} />
+      <PhotoFavButton isFav={isFav} onClick={(e) => { e.stopPropagation(); toggleFavorite(photo.id); }} />
 
       <img
         className="photo-list__image"
