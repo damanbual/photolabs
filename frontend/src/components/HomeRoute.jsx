@@ -7,6 +7,7 @@ const HomeRoute = ({
   topics,
   photos,
   favPhotos,
+  favCount, // Add favCount as a prop
   toggleFavorite,
   onTopicSelect,
   showAllPhotos,
@@ -19,6 +20,7 @@ const HomeRoute = ({
       <TopNavigationBar
         topics={topics}
         favPhotos={favPhotos}
+        favCount={favCount}  // Pass favCount to TopNavigationBar for the favorite icon
         onTopicSelect={onTopicSelect}
         showAllPhotos={showAllPhotos} // Function to reset to all photos
         toggleShowFavorites={toggleShowFavorites} // Function to toggle favorite photos
