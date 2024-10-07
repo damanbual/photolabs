@@ -22,8 +22,8 @@ const App = () => {
         favCount={state.favPhotos.length}
         toggleFavorite={updateToFavPhotoIds}
         onTopicSelect={onLoadTopic}
-        showAllPhotos={() => onLoadTopic(null)}
-        toggleShowFavorites={() => {}}
+        showAllPhotos={() => onLoadTopic(null)}  // This ensures all photos show when logo is clicked
+        toggleShowFavorites={() => {}}  // Optional, can be implemented later for showing only favorites
         onPhotoClick={onPhotoSelect}
       />
       {state.modalPhoto && (

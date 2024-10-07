@@ -7,9 +7,7 @@ const TopicList = ({ topics, onTopicSelect }) => {
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
-    if (onTopicSelect) {
-      onTopicSelect(topic.title);  // Ensure we're passing the topic title to the parent component
-    }
+    onTopicSelect && onTopicSelect(topic.title); // Safely call onTopicSelect with the topic's title
   };
 
   return (
@@ -18,8 +16,8 @@ const TopicList = ({ topics, onTopicSelect }) => {
         <TopicListItem
           key={topic.id}
           topic={topic}
-          isSelected={topic.title === selectedTopic?.title}
-          onClick={() => handleTopicClick(topic)}
+          isSelected={topic.title === selectedTopic?.title}  // Highlight the selected topic
+          onClick={() => handleTopicClick(topic)}  // Handle topic click and update state
         />
       ))}
     </ul>

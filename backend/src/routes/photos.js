@@ -25,6 +25,7 @@ module.exports = db => {
               'city', photo.city,
               'country', photo.country
             ),
+            'topic_id', photo.topic_id,  -- Add topic_id here
             'similar_photos', (
               SELECT 
                 json_agg(
