@@ -64,19 +64,22 @@ function useApplicationData() {
   
   const fetchData = async () => {
     try {
-      const photoResponse = await fetch('/api/photos');
-      const topicResponse = await fetch('/api/topics');
+      // Fetch both photos and topics concurrently
+      const [photoResponse, topicResponse] = await Promise.all([
+        fetch('/api/photos'),
+        fetch('/api/topics')
+      ]);
   
-      if (!photoResponse.ok || !topicResponse.ok) {
-        throw new Error("Failed to fetch data");
-      }
-  
-      const photos = await photoResponse.json();
-      const topics = await topicResponse.json();
+      // Wait for both fetches to resolve and parse their JSON
+      const [photos, topics] = await Promise.all([
+        photoResponse.json(),
+        topicResponse.json()
+      ]);
   
       console.log("Fetched Photos Data: ", photos);
       console.log("Fetched Topics Data: ", topics);
   
+      // Dispatch both photo and topic data to the state
       dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos } });
       dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: { topics } });
     } catch (error) {
@@ -108,20 +111,24 @@ function useApplicationData() {
     console.log("Selected Topic:", topicTitle);
   
     if (topicTitle) {
-      // Fetch photos again to ensure we always work with the original photo set
-      fetch('/api/photos')
-        .then(res => res.json())
-        .then(data => {
-          console.log("Fetched Photos for Filtering:", data);
+      // Find the topic ID based on the selected topic title
+      const topic = state.topics.find(t => t.title === topicTitle);
+      if (topic) {
+        const topicId = topic.id;
   
-          // Now we filter the freshly fetched photos by the selected topic
-          const filteredPhotos = data.filter(photo => photo.topic_id === state.topics.find(t => t.title === topicTitle)?.id);
-          console.log("Filtered Photos:", filteredPhotos);
+        // Fetch photos by topic ID from the backend
+        fetch(`/api/topics/photos/${topicId}`)
+          .then(res => res.json())
+          .then(data => {
+            console.log("Fetched Photos for Topic:", data);
   
-          // Dispatch the filtered photos to the state
-          dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos: filteredPhotos } });
-        })
-        .catch(error => console.error("Error fetching photos for topic filtering: ", error));
+            // Dispatch the fetched photos to the state
+            dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos: data } });
+          })
+          .catch(error => console.error("Error fetching photos for topic: ", error));
+      } else {
+        console.error("Topic not found!");
+      }
     } else {
       // Re-fetch all photos from the backend if no topic is selected (i.e., reset functionality)
       console.log("Resetting to all photos from the API.");
