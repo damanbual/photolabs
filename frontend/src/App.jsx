@@ -10,7 +10,9 @@ const App = () => {
     onPhotoSelect,
     updateToFavPhotoIds,
     onLoadTopic,
-    onClosePhotoDetailsModal
+    onClosePhotoDetailsModal,
+    getFavPhotos,
+    showFavoritePhotos
   } = useApplicationData();
 
   return (
@@ -23,7 +25,9 @@ const App = () => {
         toggleFavorite={updateToFavPhotoIds}
         onTopicSelect={onLoadTopic}
         showAllPhotos={() => onLoadTopic(null)}  // This ensures all photos show when logo is clicked
-        toggleShowFavorites={() => {}}  // Optional, can be implemented later for showing only favorites
+        toggleShowFavorites={() => {
+          showFavoritePhotos();  // This will now show the favorite photos when the user clicks the heart icon
+        }}
         onPhotoClick={onPhotoSelect}
       />
       {state.modalPhoto && (

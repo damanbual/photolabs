@@ -142,6 +142,16 @@ function useApplicationData() {
     }
   };
 
+  const getFavPhotos = () => {
+    return state.photos.filter(photo => state.favPhotos.includes(photo.id));
+  };
+
+  // Function to show only favorite photos
+const showFavoritePhotos = () => {
+  const favoritePhotos = getFavPhotos();  // Get the filtered favorite photos
+  dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos: favoritePhotos } });  // Dispatch only favorite photos
+};
+  
   // Action to close the modal
   const onClosePhotoDetailsModal = () => {
     dispatch({ type: ACTIONS.DISPLAY_PHOTO_DETAILS, payload: { photo: null } });
@@ -152,7 +162,9 @@ function useApplicationData() {
     updateToFavPhotoIds,
     onPhotoSelect,
     onLoadTopic,
-    onClosePhotoDetailsModal
+    onClosePhotoDetailsModal,
+    getFavPhotos,
+    showFavoritePhotos
   };
 }
 
