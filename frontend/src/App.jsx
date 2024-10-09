@@ -24,9 +24,9 @@ const App = () => {
         favCount={state.favPhotos.length}
         toggleFavorite={updateToFavPhotoIds}
         onTopicSelect={onLoadTopic}
-        showAllPhotos={() => onLoadTopic(null)}  // This ensures all photos show when logo is clicked
+        showAllPhotos={() => onLoadTopic(null)}  
         toggleShowFavorites={() => {
-          showFavoritePhotos();  // This will now show the favorite photos when the user clicks the heart icon
+          showFavoritePhotos();  
         }}
         onPhotoClick={onPhotoSelect}
       />
